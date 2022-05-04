@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Ingredient.associate = function (models) {
     Ingredient.hasMany(models.Recipe, { foreignKey: "recipeId" });
-    // associations can be defined here
+    Ingredient.hasMany(models.MeasurementUnit, { foreignKey: "measurementUnitId" });
   };
   return Ingredient;
 };
