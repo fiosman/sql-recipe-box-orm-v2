@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Ingredient.associate = function (models) {
-    Ingredient.hasMany(models.Recipe, { foreignKey: "recipeId" });
-    Ingredient.hasMany(models.MeasurementUnit, { foreignKey: "measurementUnitId" });
+    Ingredient.belongsTo(models.Recipe, { foreignKey: "recipeId" });
+    Ingredient.belongsTo(models.MeasurementUnit, { foreignKey: "measurementUnitId" });
   };
   return Ingredient;
 };
