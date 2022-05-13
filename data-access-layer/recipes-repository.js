@@ -77,6 +77,11 @@ async function deleteRecipe(id) {
   // saw in the video.
   //
   // Docs: https://sequelize.org/master/class/lib/model.js~Model.html#instance-method-destroy
+  return Recipe.destroy({
+    where: {
+      id,
+    },
+  });
 }
 
 async function createNewRecipe(title) {
