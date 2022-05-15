@@ -99,6 +99,8 @@ async function searchRecipes(term) {
   // given term in its title
   //
   // Docs: https://sequelize.org/v5/manual/querying.html
+  const recipes = await Recipe.findAll({ where: { term } });
+  return recipes;
 }
 
 /* Don't change code below this line ******************************************/
