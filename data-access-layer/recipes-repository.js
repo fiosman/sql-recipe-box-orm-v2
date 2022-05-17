@@ -71,6 +71,14 @@ async function getRecipeById(id) {
   // Here are links to the wholly-inadequate docs for this.
   // Docs: https://sequelize.org/v5/manual/models-usage.html#eager-loading
   //       https://sequelize.org/v5/manual/models-usage.html#nested-eager-loading
+
+  return await Recipe.findByPk(id, {
+    include: [
+      {
+        model: Instruction,
+      },
+    ],
+  });
 }
 
 async function deleteRecipe(id) {
