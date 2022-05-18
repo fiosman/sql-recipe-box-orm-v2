@@ -77,6 +77,14 @@ async function getRecipeById(id) {
       {
         model: Instruction,
       },
+      {
+        model: Ingredient,
+        include: [
+          {
+            model: MeasurementUnit,
+          },
+        ],
+      },
     ],
   });
 }
